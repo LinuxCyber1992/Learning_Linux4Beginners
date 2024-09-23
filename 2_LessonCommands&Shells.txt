@@ -3,6 +3,10 @@
 #to avoid messing up your physical drive. Do not do this on a real
 #SSD unless you know what you're doing with the shell/terminal. 
 #
+# YOUTUBE
+# https://www.youtube.com/watch?v=ORFZuxQ-7hA&ab_channel=DrinkWaterAnd_Linux
+#
+#
 #All commands are little computers stored somewhere on your PC
 #
 terminator
