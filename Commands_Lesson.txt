@@ -1,0 +1,50 @@
+echo HELLO WORLD
+
+echo Echoooooooo!!!! YO!!!
+
+cal
+
+#customizing cal commands
+
+cal 2017
+
+cal -y
+
+date
+
+clear
+
+echo "Blah blah blah"
+
+# press up arrow key to see the #command history
+
+#or 
+history
+
+# If I want to print the command on a #specific line from history:
+
+!1 
+!9
+
+#############
+# running the most recent command #you've typed:
+
+
+!!
+
+#clears the history (-c;) then writes the history and makes it permanent (-w)
+
+history -c; history -w
+
+# To get out of the terminal:
+
+exit
+
+
+#or 
+
+
+CTRL + D    to exit
+
+
+
