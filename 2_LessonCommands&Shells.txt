@@ -1,0 +1,209 @@
+#Learn the terminal and shell. Please use VMWare or VirtualBox
+#to avoid messing up your physical drive. Do not do this on a real
+#SSD unless you know what you're doing with the shell/terminal. 
+
+#All commands are little computers stored somewhere on your PC
+
+terminator
+clock
+vlc
+echo
+
+Command Syntax in Linux
+ [command_name] options inputs 
+
+ #command name lets the shell know what program you want to run
+ #when it knows what program you're on, 
+ #the shell will show and search for the program
+ # on the shell's path.
+ #it is a list of folders that contain these programs
+# [inputs] -lets the terminal know what you want to run
+#
+
+You can see your program's path with:
+
+
+echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games
+
+
+# different folder paths, separated by a ; 
+# after /usr/local/sbin, you've got another folder after it: /usr/local/bin:
+# and another /usr/sbin:
+# the shell will start at the very left of the path and look inside 
+# folder to for a command (echo --- or whater you put!)
+# if it doesn't find it there, it moves to the next one - like a robot
+# if it didn't find ECHO on /usr/local/sbin; it will move on the next folder
+# the program will read from the left to the right.
+# /usr/local/bin
+# then... /usr/sbin
+# then... /usr/bin:
+# etceterra. and this one ends in: /usr/games
+# but if it didn't find the Command in any of the folders, it will
+# give you an error message: 
+#
+#
+# echo: command not found
+#
+#
+#
+# Which lets you know that you need to have 
+# that program (command) installed, because you don't have it.
+# 
+# when we input echo $PATH, the shell will find the command from left to right
+#
+# lets say you have a program called qFlipper, and qFlipper was actually
+# in this folder: 
+#  
+# /usr/sbin  (THIRD PATH)
+# from this original path:
+# usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games qFlipper
+#
+# The shell ran the command on the first path. which is: /usr/local/sbin
+# because that's where it found it first. but if you want it to run on the 3rd path
+# it's not possible because it found the same name in /usr/loca/sbin !
+#
+#
+#
+#
+# Now, there is a better way to find the path by:
+# 
+# which
+#
+# command. The which command immediately tells you the program path
+#
+# for example: 
+#
+ which qFlipper
+#
+# 
+the results are: /usr/bin/qFlipper
+#
+# This is where the program is.
+#
+#   NOW  you can customize your command with different options and inputs!
+#   
+#   SYNTAX:     [command_name] options inputs 
+#
+#   All commands, do not require inputs
+# some inputs are optional
+# like the date command. if you type date, it will show you the date
+# without using an option after #date
+# Commands operate on the input - These are called "OPERAND".
+#
+#
+# the input is sometimes called the Operand.
+# 
+# so for cal command, if I want some options on it, like the year, month, etceterra
+#
+# like this: 
+cal 2024
+#
+# right after the cal is the input, just like in the syntax. 
+# 
+# now, there is also an option in the cal command. 
+#
+# cal -y will show the current year's calendar
+# the -y is an option just like in the syntax. 
+## 
+#
+# another example: $date 
+# will show you the current date, time, and year.
+# 
+# but if we type a help option with it: 
+#
+# $date --help 
+# it will show you that the date has many options in the arguments section
+#
+# so if we unless
+#
+date -u
+#
+# it will show us the Universal date!
+#
+# if you look back at the --help option in date command:
+date --help
+#
+# it will show you other options, it has a guideline.
+# 
+so in the date --help, you can use: date --resolution, and date --version
+# 
+# (these are longnames -- and one dash - are shortnames)
+#
+#
+#for example:
+#
+date --universal   (THIS IS LONGFORM)
+date -u            (THIS IS SHORTFORM)
+#
+#
+# with the LongForm commands, you cannot string them together, it has to be
+# separated like this:
+#
+date --universal --longformExample2 --longFormExample3
+#
+#
+# 
+#~~~~~~~~~~~~EVERYTHING IN LINUX IS CASE SENSITIVE, So, it is a good thing you are learning it.
+#~~~~~~~~~~~~because you will discover that it teaches you how to SPELL
+#
+# so that means, that if you type date with a capital D:
+Date   or   dAte   or DATE   or DatE
+# the command will not be found and it will return an error!
+#
+# Date: command not found
+#
+# the shell tries to find it on the path, but it wont because
+# the program date is with a small letter D.
+# This also applies in the options and inputs in the SYNTAX
+# so please pay attention to the SYNTAX.
+#
+# Make sure you spell your commands with the right case sensitivity!
+#
+#
+# The only other to know, sometimes options can have their own inputs.
+# for example, if we go to calendar [cal]
+#
+cal 05 2024
+#
+# it will show you the month and the year in a calendar
+# but if you put:
+cal -A 2 05 2024
+#
+# the [-A] option will show May 2024 with three months after [2] option
+# Why is it three if the option is [2]? on cal -A 2 05 2024?
+# well because the linux shell counts the zero first.
+# like this:
+# 0 1 2
+# So that's three digits.---> [0] [1] [2]
+#
+# the results are, Three calendars after.
+#
+# You can also show the months before with the -B option
+# like this:
+#
+cal -B 2 05 2024
+#
+# so now, it will show you three calendars, from May and then looking back
+# to the past.. March, April, May
+#
+# ##############################################################################
+#
+# THESE ARE Basic Commands that become more powerful used with other commands
+#
+# Remember that any program should follow its SYNTAX, and follow the case
+# sensitivy rule
+# 
+#
+#
+#                      SUMMARY
+#
+#                      Commands = CommandName -options -inputs
+#                      CommandNames need to math the shell's search path and the
+#                                   syntax
+#                      Options modify a command's behavior
+#                      Commands operate on inputs.
+#                      Every Command Behaves Differently.
+#                      Some Commands have long form inputs and others can't.
+#                      Every command has its manual, [man] page.
+#                       
