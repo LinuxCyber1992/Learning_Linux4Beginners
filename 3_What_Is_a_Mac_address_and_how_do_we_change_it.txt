@@ -1,0 +1,89 @@
+Linux Essentials
+
+                        Mac Address
+                or Media Access Control
+                    How to Change it?
+Operations security
+
+Operations security is a process that identifies critical information to determine 
+whether friendly actions can be observed by enemy intelligence, determines if information obtained
+ by adversaries could be interpreted to be useful to them, and then executes selected measures that 
+ eliminate or reduce adversary exploitation of friendly critical information.
+Source:
+https://en.wikipedia.org/wiki/Operations_security 
+
+#It is a permanent, physical and unique assigned by the manufacturer.
+#()
+#REasons to change mac address: 
+#1] anonimity
+#2] impersonate other devices
+#3] bypass filters
+
+#[TAB] - finishes off the command
+
+$ ifconfig   - shows all the available interfaces/devices in the kali VM
+
+#Devices, as in ;  any device that allow us to connect to the network. 
+#Wifi-card, ethernet card, etc.
+
+#In order for the wifi adapter to change the mac address, I have to 
+#disable it first.
+
+
+$ifconfig wlan0 down
+
+
+#To change to a random mac address: (fast method):
+find the wi-fi adapter name (it should match your device)_
+
+$ lsusb
+
+#if it's not there, then you need to probably plug it in
+
+#when it is plugged in, you need to turn off the wlan0 (device)
+
+#then you can change the mac address
+
+$ macchanger -A [interface/device]
+$ macchanger -A wlan0
+
+#after changing the mac address, you can turn on the wifi-adapter/device
+$ man macchanger AND macchanger --help can direct you to its options/operand.
+
+
+$ ifconfig wlan0 up - turn on the device
+
+Resources:
+1] if you want more information on changing the mac address:
+https://www.geeksforgeeks.org/how-to-change-the-mac-address-in-kali-linux-using-macchanger/
+
+2] https://www.mediacollege.com/linux/command/linux-command.html
+
+3] https://explainshell.com/
+
+
+Commands In Order:
+$sudo su 
+#or sudo in every command
+# either way, being root is more convenient
+
+# you need to be on an admin account...
+
+$ ifconfig 
+ 
+OR
+
+$lsusb
+
+# to check your device status and name 
+
+$ ifconfig wlan0 down
+
+$ macchanger -A wlan0
+
+# man chanchanger or macchanger --help for instructions on how to use it
+
+ifconfig wlan0 up
+
+macchanger -s wlan0 
+#to check for the mac address that has been changed. 
