@@ -1,0 +1,45 @@
+OPSEC DISCLAIMER:
+MUCH OF THE INFORMATION HERE I GATHERED AND DEMONSTRATED, IS ALREADY ON 3 UDEMY COURSES,
+YOUTUBE SOURCES, AND LINUX BOOKS. 
+
+# How to change your wifi-adapter status to #
+# Monitor mode:
+
+# First, Please plug-in or make your your linux capable wi-fi adapter: (For Kali Linux)
+
+https://www.stationx.net/best-wifi-adapters-for-kali-linux/ 
+
+
+# Once plugged in, type:
+
+$ lsusb
+ to find your adapter and make sure that it is in the Operating System.
+
+$ iwconfig
+# To check which interface your wifi-adapter is on or in managed or monitor mode.
+
+# Most likely, it will be on wlan0 or wlan1
+
+
+
+$ ifconfig wlan0 down
+
+# We need to always shut off the adapter in order
+# to change its settings for mac address spoofing
+# and its mode. 
+
+$ iwconfig wlan0 mode monitor
+# Now we are changing it to monitor mode
+
+$ ifconfig wlan0 up
+
+##################################################
+# Now to turn it back to managed mode:
+#
+$ ifconfig wlan0 down
+$ iwconfig wlan0 mode managed
+$ ifconfig wlan0 up
+#
+#
+To check the status:
+$iwconfig
